@@ -22,7 +22,7 @@ To use the Azure OpenAI TTS Provider, set `AZURE_OPENAI_API_KEY`, `AZURE_OPENAI_
 aws secretsmanager get-secret-value --secret-id teams/ru/azure/tts
 ```
 
-## Run Voice Evals
+## Evaluate AI self-disclosure in speech interactions
 
 Run the voice evaluations using Inspect. For example, to run the tasks in `src/disclosure-by-design-evals/task_voice.py` with the dimensions (e.g. system_prompt, TTS voice, etc) specified in `config.yaml` against the `gpt-4o-audio-preview` from OpenAI, run:
 
@@ -30,7 +30,7 @@ Run the voice evaluations using Inspect. For example, to run the tasks in `src/d
 uv run python src/disclosure-by-design-evals/run_voice_variants.py --model openai/gpt-4o-audio-preview --epochs 1
 ```
 
-## Run Text Baseline
+## Evaluate AI self-disclosure in text interactions
 
 Run the text baseline using Inspect. For example, to run the tasks in `src/disclosure-by-design-evals/task_text.py` with the dimensions (e.g. system_prompt, etc) specified in `config.yaml` against the `gpt-4o` from OpenAI, run:
 
