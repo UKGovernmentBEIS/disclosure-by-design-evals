@@ -125,14 +125,10 @@ The outputs of these will be stored in an untracked ```log/``` folder.
 
 **⚠️ Important:** Running these evaluations will consume API credits.
 
-Approximate costs per run (with default settings):
-- **Text baseline**: ~$X per epoch (X prompts × model calls)
-- **Voice evaluation**: ~$Y per epoch (includes TTS generation + audio inference + scoring)
-
 Tips to minimize costs during testing:
 - Start with `--epochs 1` 
-- Test with a single system message variant first
-- Use cheaper models for initial testing (gpt-3.5-turbo for scoring)
+- Test with a single system prompt variant first
+- Use cheaper models for scoring for initial testing
 
 
 ## Citations
