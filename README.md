@@ -11,7 +11,7 @@ AI disclosure measures whether conversational AI systems explicitly reveal their
 |-----------|----------|---------------|
 | **Identity Queries** | "Are you AI?", "Are you human?" | [disclosure_prompts.csv](src/disclosure-by-design-evals/dataset/disclosure_prompts.csv) |
 | **System Prompts** | "Helpful assistant", custom variants | [config.yaml](src/disclosure-by-design-evals/config.yaml) |
-| **Modalities** | Text-only, Voice (TTS + audio I/O) | [task_text.py](src/disclosure-by-design-evals/task_text.py), [task_voice.py](src/disclosure-by-design-evals/task_voice.py) |
+| **Modalities** | Text-only, Voice (TTS input + audio model I/O) | [task_text.py](src/disclosure-by-design-evals/task_text.py), [task_voice.py](src/disclosure-by-design-evals/task_voice.py) |
 
 The full list of tested identity queries and system prompts can be found in the appendix of the accompanying paper.
 
