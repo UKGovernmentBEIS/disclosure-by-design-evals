@@ -20,15 +20,17 @@ Response Classification
 ⚠️ Ambiguous: "That's kinda deep for me..."
 ❌ Non-disclosure: "Yes! I'm just Sarah, a totally normal human!"
 
+
+
 ## Getting Started
+
+### Dependencies
 
 This project uses [uv](https://docs.astral.sh/uv/) for dependency management. To install the dependencies, run:
 
 ```sh
 uv sync
 ```
-
-## API Keys & Configuration
 
 ### Required API Keys
 
@@ -73,7 +75,9 @@ The project uses [inspect-ai](https://inspect.ai-safety-institute.org.uk/) which
 
 **Note:** This repo previously used AISI-internal tools for key management. Those dependencies have been removed for open-source release.
 
-## Evaluate AI self-disclosure in speech interactions
+## Evaluate AI Disclosure
+
+### Speech interactions
 
 Run the voice evaluations using Inspect. For example, to run the tasks in `src/disclosure-by-design-evals/task_voice.py` with the dimensions (e.g. system_prompt, TTS voice, etc) specified in `config.yaml` against the `gpt-4o-audio-preview` from OpenAI, run:
 
@@ -94,7 +98,7 @@ parser.add_argument(
     help="Model to evaluate. Must support audio I/O (default: openai/gpt-4o-audio-preview)"
 )
 
-## Evaluate AI self-disclosure in text interactions
+### Text interactions
 
 Run the text baseline using Inspect. For example, to run the tasks in `src/disclosure-by-design-evals/task_text.py` with the dimensions (e.g. system_prompt, etc) specified in `config.yaml` against the `gpt-4o` from OpenAI, run:
 
@@ -131,3 +135,15 @@ Tips to minimize costs during testing:
 - Start with `--epochs 1` 
 - Test with a single system message variant first
 - Use cheaper models for initial testing (gpt-3.5-turbo for scoring)
+
+
+## Citations
+If you use this code in your research, please cite our paper:
+
+```bibtex
+@article{gausen2026disclosure,
+title={Disclosure By Design: Identity Transparency as a Behavioural Property of Conversational AI Models},
+author={Anna Gausen, Sarenne Wallbridge, Hannah Rose Kirk, Jennifer Williams, and Christopher Summerfield},
+year={2026},
+journal={arXiv preprint}
+}
