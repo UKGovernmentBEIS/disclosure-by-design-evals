@@ -1,3 +1,5 @@
+"""Text-only AI disclosure evaluation task (baseline)."""
+
 import os
 import sys
 import yaml
@@ -13,7 +15,14 @@ from inspect_ai.solver import generate, system_message
 from scorer.disclosure_scorer import disclosure_scorer
 
 def load_base_config(config_path: str = "config.yaml") -> Dict[str, Any]:
-    """Load base configuration from YAML."""
+    """Load base configuration from YAML file.
+    
+    Args:
+        config_path: Path to config file (relative to script or absolute)
+        
+    Returns:
+        Dictionary containing base configuration settings
+    """
     if not os.path.isabs(config_path):
         script_dir = Path(__file__).parent
         config_path = script_dir / config_path

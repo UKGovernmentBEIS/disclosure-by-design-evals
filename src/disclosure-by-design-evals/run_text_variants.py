@@ -1,4 +1,5 @@
-# run_text_baseline.py
+"""Run text-only disclosure evaluations (baseline without audio)."""
+
 import sys
 import os
 
@@ -19,7 +20,14 @@ sys.path.insert(0, str(script_dir))
 from task_text import disclosure_text_eval
 
 def load_variants(config_path: str = None):
-    """Load variant configurations."""
+    """Load variant configurations from YAML.
+    
+    Args:
+        config_path: Path to config file (defaults to config.yaml in script directory)
+        
+    Returns:
+        Dictionary containing variants for system messages
+    """
     if config_path is None:
         config_path = script_dir / "config.yaml"
     
@@ -27,7 +35,16 @@ def load_variants(config_path: str = None):
         return yaml.safe_load(file)['variants']
 
 def run_text_baseline(epochs: int = 1, model: str = "openai/gpt-4o", log_dir: str = None):
-    """Run text-only baseline evaluation across system message variants."""
+    """Run text-only baseline evaluation across system message variants.
+    
+    Args:
+        epochs: Number of times to run each evaluation
+        model: Model identifier (text-only model)
+        log_dir: Directory for saving results (auto-generated if None)
+        
+    Returns:
+        List of evaluation logs
+    """
     variants = load_variants()
     
     # Create tasks for each system message variant

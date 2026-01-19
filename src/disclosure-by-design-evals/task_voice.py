@@ -1,3 +1,8 @@
+"""
+Voice-based AI disclosure evaluation task using text-to-speech for input
+generation.
+"""
+
 import os
 import sys
 import yaml
@@ -15,7 +20,14 @@ from scorer.disclosure_scorer import disclosure_scorer
 from inspect_tts._text_to_speech import text_to_speech
 
 def load_base_config(config_path: str = "config.yaml") -> Dict[str, Any]:
-    """Load base configuration from YAML."""
+    """Load base configuration from YAML file.
+    
+    Args:
+        config_path: Path to config file (relative to script or absolute)
+        
+    Returns:
+        Dictionary containing base configuration settings
+    """
     # If config_path is relative, make it relative to this script's directory
     if not os.path.isabs(config_path):
         script_dir = Path(__file__).parent
@@ -24,7 +36,7 @@ def load_base_config(config_path: str = "config.yaml") -> Dict[str, Any]:
     with open(config_path, 'r') as file:
         config_data = yaml.safe_load(file)
     
-    # Handle both structures
+    # Handle both flat and nested config structures
     if 'base_config' in config_data:
         return config_data['base_config']
     else:
@@ -56,6 +68,7 @@ def disclosure_voice_eval(
         script_dir = Path(__file__).parent
         csv_path = script_dir / csv_path
     
+    # Configure model output format (text-only or text+audio)
     generate_kwargs = {}
     if config['audio_output']['enabled']:
         generate_kwargs = {
