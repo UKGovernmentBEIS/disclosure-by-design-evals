@@ -5,12 +5,10 @@ description = "AI self-disclosure evals using audio inputs"
 requires-python = ">=3.10,<4"
 readme = "README.md"
 dependencies = [
-  "aisitools",
   "inspect-ai>=0.3.86,<0.4",
   "inspect-tts",
   "websockets<14.0",
 ]
 
 [tool.uv.sources]
-aisitools = { git = "ssh://git@github.com/AI-Safety-Institute/aisi-inspect-tools.git" }
 inspect-tts = { git = "https://github.com/UKGovernmentBEIS/inspect_tts.git" }
