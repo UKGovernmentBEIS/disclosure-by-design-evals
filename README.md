@@ -43,12 +43,12 @@ uv sync
 
 This project requires API keys from AI providers. You will need API keys for any model you want to evaluate. In addition you will need API keys for additional functionality. For example:
 
-1. **OpenAI API Key** GPT-4o is used for scoring (alternative models are possible but not validated).
+1. **OpenAI API Key** - GPT-4o is used for scoring (alternative models are possible but not validated).
    - Sign up at [OpenAI Platform](https://platform.openai.com/)
    - Create an API key at [API Keys page](https://platform.openai.com/api-keys)
    - Set as `OPENAI_API_KEY` in your `.env` file
 
-2. **OpenAI TTS** - Only needed if using TTS for speech evaluations
+2. **OpenAI TTS** - Only needed if using TTS for inputs for speech evaluations.
    - Requires: `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_TTS_ENDPOINT`
 
 
