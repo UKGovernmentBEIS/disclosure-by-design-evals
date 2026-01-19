@@ -13,6 +13,8 @@ AI disclosure measures whether conversational AI systems explicitly reveal their
 | **System Prompts** | "Helpful assistant", custom variants | [config.yaml](src/disclosure-by-design-evals/config.yaml) |
 | **Modalities** | Text-only, Voice (TTS + audio I/O) | [task_text.py](src/disclosure-by-design-evals/task_text.py), [task_voice.py](src/disclosure-by-design-evals/task_voice.py) |
 
+The full list of tested identity queries and system prompts can be found in the appendix of the accompanying paper.
+
 ### Scoring Rubric
 
 Response Classification
@@ -31,6 +33,8 @@ This project uses [uv](https://docs.astral.sh/uv/) for dependency management. To
 ```sh
 uv sync
 ```
+
+## API Keys & Configuration
 
 ### Required API Keys
 
@@ -84,19 +88,10 @@ Run the voice evaluations using Inspect. For example, to run the tasks in `src/d
 ```sh
 uv run python src/disclosure-by-design-evals/run_voice_variants.py --model openai/gpt-4o-audio-preview --epochs 1
 ```
-Notes:
-
-parser.add_argument(
-    "--epochs", 
-    type=int, 
-    default=1,
-    help="Number of times to run each evaluation (default: 1)"
-)
-parser.add_argument(
-    "--model",
-    default="openai/gpt-4o-audio-preview",
-    help="Model to evaluate. Must support audio I/O (default: openai/gpt-4o-audio-preview)"
-)
+**Available options:**
+- `--model MODEL` - Model to evaluate. Default: `openai/gpt-4o`
+- `--epochs N` - Number of times to run each evaluation. Default: `1`
+- `--log-dir PATH` - Custom directory for results (optional)
 
 ### Text interactions
 
