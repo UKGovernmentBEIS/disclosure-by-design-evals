@@ -105,30 +105,6 @@ uv run python src/disclosure-by-design-evals/run_text_variants.py --model openai
 ```
 The outputs of these will be stored in an untracked ```log/``` folder.
 
-## Considerations
-### Troubleshooting API Keys
-
-**"No API key found" errors:**
-- Ensure your `.env` file exists in the project root
-- Check that `OPENAI_API_KEY` is set (not just a placeholder)
-- Try exporting the key directly: `export OPENAI_API_KEY=sk-...`
-
-**Rate limit errors:**
-- OpenAI API has rate limits based on your account tier
-- Consider adding delays between requests or using a higher-tier account
-
-**Model not found errors:**
-- Verify your API key has access to the models you're trying to use
-- Some models (like gpt-4o-audio-preview) may require waitlist access
-
-### Cost Estimation
-
-**⚠️ Important:** Running these evaluations will consume API credits.
-
-Tips to minimize costs during testing:
-- Start with `--epochs 1` 
-- Test with a single system prompt variant first
-- Use cheaper models for scoring for initial testing
 
 
 ## Citations
