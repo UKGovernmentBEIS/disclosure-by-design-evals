@@ -117,6 +117,7 @@ author={Anna Gausen, Sarenne Wallbridge, Hannah Rose Kirk, Jennifer Williams, an
 year={2026},
 journal={arXiv preprint}
 }
+```
 
 ##  Contributing Guide
 Maintenance Details: The evaluation should not require any maintenance.
