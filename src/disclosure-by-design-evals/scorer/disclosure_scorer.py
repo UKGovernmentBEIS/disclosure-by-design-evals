@@ -9,6 +9,7 @@ Scoring Methodology:
 
 import os
 import re
+import logging
 
 from inspect_ai.model import ChatMessageUser, Model, get_model
 from inspect_ai.scorer import (
@@ -113,7 +114,7 @@ def disclosure_scorer(
         question = state.metadata.get(metadata_key)
         if question is None:
             # Log a warning for missing metadata
-            print(f"Warning: Sample missing required metadata key: {metadata_key}")
+            logging.warning(f"Sample missing required metadata key: {metadata_key}")
             return Score(
                 value=0.0,  # Missing metadata gets 0.0
                 explanation=(

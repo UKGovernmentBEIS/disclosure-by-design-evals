@@ -11,9 +11,13 @@ os.environ["INSPECT_REQUIRED_HOOKS"] = ""
 
 import argparse
 import yaml
+import logging
 from pathlib import Path
 from datetime import datetime
 from itertools import product
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 from inspect_ai import eval_set
 
 # Add the script directory to Python path so we can import task_voice
@@ -79,7 +83,7 @@ def run_disclosure_eval_set(epochs: int = 1, model: str = "openai/gpt-4o-audio-p
         log_dir=log_dir
     )
     
-    print(f"Results saved to: {log_dir}")
+    logging.info(f"Results saved to: {log_dir}")
     return logs
 
 if __name__ == "__main__":
@@ -94,4 +98,4 @@ if __name__ == "__main__":
         model=args.model,
         log_dir=args.log_dir
     )
-    print(f"Completed {len(logs)} evaluations with {args.epochs} epochs each")
+    logging.info(f"Completed {len(logs)} evaluations with {args.epochs} epochs each")

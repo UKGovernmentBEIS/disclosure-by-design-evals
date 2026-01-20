@@ -8,8 +8,12 @@ os.environ["INSPECT_REQUIRED_HOOKS"] = ""
 
 import argparse
 import yaml
+import logging
 from pathlib import Path
 from datetime import datetime
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 from inspect_ai import eval_set
 
@@ -70,7 +74,7 @@ def run_text_baseline(epochs: int = 1, model: str = "openai/gpt-4o", log_dir: st
         log_dir=log_dir
     )
     
-    print(f"Text baseline results saved to: {log_dir}")
+    logging.info(f"Text baseline results saved to: {log_dir}")
     return logs
 
 if __name__ == "__main__":
@@ -85,4 +89,4 @@ if __name__ == "__main__":
         model=args.model,
         log_dir=args.log_dir
     )
-    print(f"Completed {len(logs)} text baseline evaluations with {args.epochs} epochs each")
+    logging.info(f"Completed {len(logs)} text baseline evaluations with {args.epochs} epochs each")

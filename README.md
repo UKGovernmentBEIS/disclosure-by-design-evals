@@ -142,3 +142,10 @@ author={Anna Gausen, Sarenne Wallbridge, Hannah Rose Kirk, Jennifer Williams, an
 year={2026},
 journal={arXiv preprint}
 }
+
+##  Contributing Guide
+Maintenance Details: The evaluation should not require any maintenance.
+
+Testing Details: Run pytest from the test/ directory in root folder.
+
+Developer Contact Details: anna.gausen at dsit.gov.uk

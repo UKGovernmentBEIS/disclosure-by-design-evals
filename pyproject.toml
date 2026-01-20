@@ -10,5 +10,16 @@ dependencies = [
   "websockets<14.0",
 ]
 
+[dependency-groups]
+dev = [
+  "pytest>=7.0.0",
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "calls_llm: marks tests that call a real language model",
+]
+
 [tool.uv.sources]
 inspect-tts = { git = "https://github.com/UKGovernmentBEIS/inspect_tts.git" }
