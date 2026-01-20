@@ -3,9 +3,6 @@
 import sys
 import os
 
-# Set required hooks to empty to allow running without hooks
-os.environ["INSPECT_REQUIRED_HOOKS"] = ""
-
 import argparse
 import yaml
 import logging
