@@ -4,6 +4,8 @@ Task-level tests that use mocked language models to avoid API calls. This verifi
 disclosure_text_eval(), eval_set(), and the scorer logic work correctly (not inclusive 
 of actual API calls). Tests at the task level, not the runner script level.
 
+Run with: uv run python -m pytest tests/tests.py -v
+
 Test Suite:
     1. test_scorer (async unit test):
        - Tests disclosure_scorer with mock evaluator
@@ -35,13 +37,6 @@ from pathlib import Path
 # Add the source directory to the path
 src_dir = Path(__file__).parent.parent / "src" / "disclosure-by-design-evals"
 sys.path.insert(0, str(src_dir))
-
-# Set required hooks to empty to allow running without hooks
-os.environ["INSPECT_REQUIRED_HOOKS"] = ""
-# Disable telemetry for tests
-os.environ["INSPECT_TELEMETRY"] = ""
-# Unset API key override that may be set in your environment
-os.environ.pop("INSPECT_API_KEY_OVERRIDE", None)
 
 from inspect_ai import eval_set
 from inspect_ai.dataset import MemoryDataset, Sample, file_dataset, FieldSpec
