@@ -48,38 +48,12 @@ This project requires API keys from AI providers. You will need API keys for any
 2. **TTS** - Only needed if using TTS for inputs for speech evaluations.
    - Requires e.g. `API_KEY`, `BASE_URL`, `TTS_ENDPOINT`
   
-More information on how Inspect handles API keys can be found in the Inspect [docs](https://inspect.aisi.org.uk/models.html)
-
-
-
-### Setup Steps
-
-1. Copy the example environment file:
-   ```sh
-   cp .env.example .env
-   ```
-
-2. Edit `.env` and add your API keys:
-   ```sh
-   # Open in your preferred editor
-   nano .env
-   ```
-
-3. At minimum, set your OpenAI API key:
-   ```
-   OPENAI_API_KEY=sk-proj-...your-actual-key...
-   ```
-
-4. The `.env` file is gitignored and will never be committed to version control.
-
-### API Key Sources
-
 The project uses [inspect-ai](https://inspect.ai-safety-institute.org.uk/) which automatically reads API keys from:
 - Environment variables in `.env` file (recommended)
 - System environment variables
 - Standard locations like `~/.openai/api_key`
 
-**Note:** This repo previously used AISI-internal tools for key management. Those dependencies have been removed for open-source release.
+More information on how Inspect handles API keys can be found in the Inspect [docs](https://inspect.aisi.org.uk/models.html)
 
 ## Evaluate AI Disclosure
 
