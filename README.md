@@ -43,7 +43,7 @@ uv sync
 
 This project requires API keys from AI providers. You will need API keys for any model you want to evaluate. In addition you will need API keys for additional functionality. For example:
 
-1. **Scorer** - OpenAI GPT-4o is used and validated for scoring (alternative models are possible but not validated - update specified model in config.yaml).
+1. **Scorer** - `OpenAI GPT-4o` is used and validated for scoring (alternative models are possible but not validated - update specified model in config.yaml).
 
 2. **TTS** - Only needed if using TTS for inputs for speech evaluations.
    - Requires e.g. `API_KEY`, `BASE_URL`, `TTS_ENDPOINT`
@@ -53,7 +53,7 @@ The project uses [inspect-ai](https://inspect.ai-safety-institute.org.uk/) which
 - System environment variables
 - Standard locations like `~/.openai/api_key`
 
-More information on how Inspect handles API keys can be found in the Inspect [docs](https://inspect.aisi.org.uk/models.html)
+More information on how Inspect handles API keys can be found in the Inspect [docs](https://inspect.aisi.org.uk/models.html).
 
 ## Evaluate AI Disclosure
 
