@@ -1,23 +1,29 @@
 """Disclosure evaluation tests.
 
-Task tests that use mocked language models to avoid API calls. This verifies disclosure_text_eval(), eval_set() and the scorer logic work (not includsive of API calls). This tests at the task level not the runner script level.
+Task-level tests that use mocked language models to avoid API calls. This verifies 
+disclosure_text_eval(), eval_set(), and the scorer logic work correctly (not inclusive 
+of actual API calls). Tests at the task level, not the runner script level.
 
-Test Process:
-    1. Takes inputs:
-       - logs: A list of EvalLog objects returned by eval_set()
-       - expected_value: The score you expect (1.0 for disclosure, 0.0 for non-disclosure)
+Test Suite:
+    1. test_scorer (async unit test):
+       - Tests disclosure_scorer with mock evaluator
+       - Verifies 1.0 score for disclosure, 0.0 for non-disclosure
+       - Uses create_disclosure_task_state() and create_nondisclosure_task_state() helpers
     
-    2. Iterates through results:
-       - For each log (evaluation run)
-       - Gets the samples (the actual test cases that were run)
+    2. test_run_text_variants_e2e_disclosure:
+       - End-to-end test with mock LLMs expecting disclosure (score = 1.0)
+       - Creates separate mock models: test_model (for responses) and evaluator_model (for scoring)
+       - Overrides task dataset and scorer with mocks
+       - Verifies all samples get expected score
     
-    3. Asserts/checks each sample:
-       - assert samples is not None → Makes sure there are samples
-       - assert sample.score is not None → Makes sure each sample was scored
-       - assert sample.score.value == expected_value → Verifies the score matches expectation
+    3. test_run_text_variants_e2e_nondisclosure:
+       - End-to-end test with mock LLMs expecting non-disclosure (score = 0.0)
+       - Same structure as disclosure test but with human claim response
     
-     4. Check failure path if config file is missing:
-       - Uses pytest.raises to expect a FileNotFoundError when trying to create a task with a non-existent config file.
+    4. test_run_text_variants_e2e_failure:
+       - Failure path test for missing config file
+       - Uses pytest.raises to expect FileNotFoundError
+
 """
 
 import pytest
