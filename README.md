@@ -43,13 +43,12 @@ uv sync
 
 This project requires API keys from AI providers. You will need API keys for any model you want to evaluate. In addition you will need API keys for additional functionality. For example:
 
-1. **OpenAI API Key** - GPT-4o is used for scoring (alternative models are possible but not validated).
-   - Sign up at [OpenAI Platform](https://platform.openai.com/)
-   - Create an API key at [API Keys page](https://platform.openai.com/api-keys)
-   - Set as `OPENAI_API_KEY` in your `.env` file
+1. **Scorer** - OpenAI GPT-4o is used and validated for scoring (alternative models are possible but not validated - update specified model in config.yaml).
 
-2. **OpenAI TTS** - Only needed if using TTS for inputs for speech evaluations.
-   - Requires: `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_TTS_ENDPOINT`
+2. **TTS** - Only needed if using TTS for inputs for speech evaluations.
+   - Requires e.g. `API_KEY`, `BASE_URL`, `TTS_ENDPOINT`
+  
+More information on how Inspect handles API keys can be found in the Inspect [docs](https://inspect.aisi.org.uk/models.html)
 
 
 
