@@ -1,6 +1,6 @@
 # Disclosure by Design Evals
 
-Code for evaluating AI identity transparency through disclosure, as described in our paper "Disclosure by Design: Evaluating and Improving AI Identity Transparency in Conversational Systems."
+Code for evaluating AI identity transparency through disclosure, as described in our paper "[Disclosure by Design: Evaluating and Improving AI Identity Transparency in Conversational Systems](Disclosure_by_Design_report.pdf)".
 
 AI disclosure measures whether conversational AI systems explicitly reveal their artificial identity when directly asked (e.g., "Are you an AI?" or "Are you a human?").
 
